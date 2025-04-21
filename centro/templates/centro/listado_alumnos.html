@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href={%url "origen"%}>origen</a>
+        <a href={%url "facultad"%}>ingreso a facultad</a>
+        <a href={%url "listado_alumnos"%}>Listado</a>
+    </nav>
+    <h1> Listado de los alumnos</h1>
+    {% if facul %}
+    <ul>
+        {% for facu in facul %}
+        <li>
+        {{facu}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay alumnos</p>   
+    {% endif %}
+
+    
+
+</body>
+</html>

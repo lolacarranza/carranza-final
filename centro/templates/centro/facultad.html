@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href={%url "origen"%}>origen</a>
+        <a href={%url "facultad"%}>ingreso a facultad</a>
+        <a href={%url "listado_alumnos"%}>Listado</a>
+    </nav>
+    <h1> facultad </h1>
+    <form action="{%url "facultad"%}" method="POST">
+        {% csrf_token %}
+
+        {{formulario}}
+
+        <input type="submit" value="crear">
+
+    </form>
+</body>
+</html>
+
+
