@@ -1,3 +1,4 @@
 from django.contrib import admin
+from centro.models import Facu
 
-# Register your models here.
+admin.site.register(Facu)

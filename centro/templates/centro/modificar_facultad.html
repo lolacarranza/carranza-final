@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href={%url "origen"%}>origen</a>
+        <a href={%url "facultad"%}>ingreso a facultad</a>
+        <a href={%url "listado_alumnos"%}>Listado</a>
+    </nav>
+    <h1> Modificar {{facu}} </h1>
+    <form action="{%url "modificar_facultad" facu.id %}" method="POST">
+        {% csrf_token %}
+
+        {{form}}
+
+        <input type="submit" value="modificar">
+
+    </form>
+</body>
+</html>
+
+

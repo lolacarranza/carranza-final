@@ -15,7 +15,9 @@
     <ul>
         {% for facu in facul %}
         <li>
-        {{facu}}
+        {{facu}} | <a href={%url "detalle_facultad" facu.id%}>Ver más</a>
+        | <a href={%url "modificar_facultad" facu.id%}>Modificar</a>
+        | <a href={%url "eliminar_facultad" facu.id%}>Eliminar</a>
         </li>
         {% endfor %}
     </ul>
