@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <nav>
-        <a href={%url "origen"%}>origen</a>
-        <a href={%url "facultad"%}>ingreso a facultad</a>
-        <a href={%url "listado_alumnos"%}>Listado</a>
-    </nav>
+{% extends "base.html" %}
+{% block contenido %}
     <h1> Eliminar {{facu}} </h1>
     <form action="{%url "eliminar_facultad" facu.id %}" method="POST">
         {% csrf_token %}
@@ -19,7 +9,5 @@
         <input type="submit" value="confirmar borrado">
 
     </form>
-</body>
-</html>
-
+{% endblock contenido %}
 

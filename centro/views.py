@@ -5,11 +5,15 @@ from centro.models import Facu
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 def origen (request):
     return render (request, 'centro/origen.html')
 
+@login_required
 def facultad (request):
+    
     print('datos del GET', request.GET)
     print('datos del POST', request.POST)
     
@@ -38,13 +42,13 @@ class DetalleFacultad(DetailView):
     model = Facu
     template_name = "centro/detalle_facultad.html"
 
-class ModificarFacultad(UpdateView):
+class ModificarFacultad(LoginRequiredMixin, UpdateView):
     model = Facu
     template_name = "centro/modificar_facultad.html"
     fields = ["nombre", "legajo", "fecha"]
     success_url = reverse_lazy(listado_alumnos)
     
-class EliminarFacultad(DeleteView):
+class EliminarFacultad(LoginRequiredMixin, DeleteView):
     model = Facu
     template_name = "centro/eliminar_facultad.html"
     success_url = reverse_lazy(listado_alumnos)
