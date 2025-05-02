@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block contenido %}
+<h1>Editar Perfil del Estudiante</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ formulario }}
+
+    <button type="submit">Guardar cambios</button>
+</form>
+
+<a href="{% url 'PerfilEstudiante' %}">
+    <button>Volver al perfil</button>
+</a>
+
+
+
+{% endblock contenido  %}

@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 def origen (request):
-    return render (request, 'centro/origen.html')
+    return render(request, 'centro/origen.html')
 
 @login_required
 def facultad (request):

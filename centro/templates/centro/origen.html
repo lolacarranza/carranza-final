@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block contenido %}
 <h1> Bienvendio/a a la pagina principal de la facultad</h1>
+{% if objeto.imagen %}
+    <img src="{{ objeto.imagen.url }}" alt="Imagen">
+
+{% endif %}
 {% endblock contenido %}
 
 
